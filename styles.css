@@ -1,0 +1,443 @@
+/* ===== 1. GENEL AYARLAR ===== */
+html {
+  scroll-behavior: smooth;           /* menüye tıklayınca yumuşak kayar */
+}
+
+body {
+  margin: 0;                         /* tarayıcının varsayılan boşluğunu sıfırlar */
+  background-color: #0a1224;         /* koyu lacivert zemin */
+  color: #aebbd9;                    /* açık mavi-gri yazı */
+  font-family: Inter, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  color: #e8eeff;
+}
+
+a {
+  color: #00b7ff;
+}
+
+/* ===== 2. ORTAK SINIFLAR (class) ===== */
+.container {
+  width: 900px;
+  max-width: 90%;                    /* küçük ekranda taşmasın */
+  margin: 0 auto;                    /* sağdan soldan eşit boşluk = ortalar */
+}
+
+/* float kullanan kutuların yüksekliğini düzgün hesaplatır */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.page-section {
+  padding: 70px 0;
+  border-top: 1px solid #243256;
+}
+
+.page-section h2 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 42px;
+  margin: 0 0 40px 0;
+}
+
+/* başlığın altındaki kısa mavi çizgi */
+.page-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: #00b7ff;
+  border-radius: 2px;
+  margin-top: 14px;
+}
+
+/* Education, Projects ve Contact bölümlerinin zemini biraz daha açık */
+#education, #projects, #cv {
+  background-color: #0d1a33;
+}
+
+.button {
+  display: inline-block;
+  background-color: #00b7ff;
+  color: #070d1f;
+  padding: 14px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #66d3ff;
+}
+
+/* ===== 3. ÜST MENÜ (id: top-bar) ===== */
+#top-bar {
+  padding: 20px 0;
+  border-bottom: 1px solid #243256;
+}
+
+.logo {
+  float: left;                       /* logo sola */
+  color: #e8eeff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#top-bar nav {
+  float: right;                      /* menü sağa */
+}
+
+#top-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;                  /* madde işaretlerini kaldırır */
+}
+
+#top-bar li {
+  display: inline;                   /* maddeleri yan yana dizer */
+  margin-left: 24px;
+}
+
+#top-bar a {
+  color: #aebbd9;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#top-bar a:hover {
+  color: #00b7ff;
+}
+
+/* ===== 4. GİRİŞ (id: home) ===== */
+#home {
+  padding: 100px 0 90px 0;
+}
+
+#home h1 {
+  font-size: 90px;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.role {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 36px;
+  color: #00b7ff;
+  margin: 10px 0 30px 0;
+}
+
+/* ===== 5. ABOUT ME ===== */
+.profile-photo {
+  float: left;                       /* fotoğraf solda, yazı yanında akar */
+  width: 220px;
+  height: 220px;
+  object-fit: cover;                 /* fotoğrafı bozmadan kareye sığdırır */
+  border-radius: 50%;                /* yuvarlak */
+  border: 3px solid #00b7ff;
+  margin: 0 36px 20px 0;
+}
+
+/* ===== 6. KARTLAR (Education, Skills ve Projects ortak kullanır) ===== */
+.card {
+  background-color: #14213d;
+  border: 1px solid #22345a;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-sizing: border-box;            /* padding ve border genişliğin içinde sayılır */
+}
+
+.card h3 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.card p {
+  margin: 0 0 10px 0;
+  font-size: 17px;
+}
+
+.card .place {
+  color: #e0e9ff;
+  font-weight: bold;
+}
+
+/* iki sütun: sol kartın sağında boşluk var, sağ kartın yok */
+.card-left {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.card-right {
+  float: left;
+  width: 48%;
+}
+
+/* Education ve Projects kartlarının üstündeki mavi çizgi */
+.edu-card,
+.project-card {
+  border-top: 4px solid #00b7ff;
+}
+
+/* tarih / yıl etiketi */
+.pill {
+  display: inline-block;
+  background-color: #00b7ff;
+  color: #04101f;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 18px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+/* ===== 7. SKILLS ===== */
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-card {
+  padding: 24px 28px;
+}
+
+.skill-icon {
+  float: left;                       /* ikon solda */
+  width: 56px;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.skill-info {
+  margin-left: 64px;                 /* ikonun yanına yer bırakır */
+}
+
+.skill-info h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.bar {
+  height: 10px;
+  background-color: #1d2d52;
+  border-radius: 5px;
+}
+
+.bar-fill {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #00b7ff;
+  background-image: linear-gradient(to right, #2563eb, #00b7ff);
+}
+
+/* doluluk oranları: HTML'de class="bar-fill level-90" gibi kullanılır */
+.level-70 { width: 70%; }
+.level-75 { width: 75%; }
+.level-80 { width: 80%; }
+.level-85 { width: 85%; }
+.level-90 { width: 90%; }
+
+/* ===== 8. PROJECTS: Education ile aynı kart yapısını kullanır (bkz. bölüm 6) ===== */
+
+/* ===== 9. CONTACT ===== */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 10px;
+}
+
+/* ===== 10. ALT BİLGİ ===== */
+footer {
+  border-top: 1px solid #243256;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 15px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== 11. KÜÇÜK EKRAN (telefon) ===== */
+@media (max-width: 600px) {
+  #home h1 {
+    font-size: 52px;
+  }
+  .logo,
+  #top-bar nav {
+    float: none;
+    display: block;
+  }
+  #top-bar nav {
+    margin-top: 14px;
+  }
+  #top-bar li {
+    margin: 0 18px 0 0;
+  }
+  .profile-photo {
+    float: none;
+    display: block;
+    margin: 0 auto 24px auto;
+  }
+}
+
+/* ===== 12. KARTLAR TELEFONDA TEK SÜTUN ===== */
+@media (max-width: 600px) {
+  .card-left,
+  .card-right {
+    float: none;
+    width: auto;
+    margin-right: 0;
+  }
+}
+
+/* ===== 13. PROJECTS ===== */
+/* Projects bölümü diğerlerinden biraz geniş: kartlar büyük görünsün */
+#projects .container {
+  width: 1100px;
+}
+
+/* tamamlanmış proje: tam genişlikte kart */
+.project-featured {
+  background-color: #14213d;
+  border: 1px solid #22345a;
+  border-top: 4px solid #00b7ff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 44px;
+  box-sizing: border-box;
+}
+
+.project-featured h3 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.project-featured p {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+}
+
+.project-featured .place {
+  color: #e0e9ff;
+  font-weight: bold;
+}
+
+.projects-subtitle {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+}
+
+/* 3 kart yan yana */
+.project-box {
+  float: left;
+  width: 31.33%;                     /* 3 kart x 31,33% + 2 boşluk x 3% = %100 */
+  margin-right: 3%;
+  margin-bottom: 24px;
+  background-color: #14213d;
+  border: 1px solid #22345a;
+  border-radius: 16px;
+  overflow: hidden;                  /* resmin köşeleri kartla birlikte yuvarlanır */
+}
+
+.project-last {
+  margin-right: 0;                   /* son kartın sağında boşluk olmasın */
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;               /* resim kırpılmadan tamamı görünür */
+  background-color: #faf9ff;         /* resimlerin açık zeminiyle aynı renk */
+}
+
+.project-body {
+  padding: 24px;
+  min-height: 260px;                 /* üç kartın boyu eşit görünsün */
+  box-sizing: border-box;
+}
+
+.project-body h3 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.project-body p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+/* "Planned" etiketi: dolu mavi yerine çerçeveli */
+.pill-planned {
+  background-color: #1d2d52;
+  color: #00b7ff;
+  border: 1px solid #00b7ff;
+}
+
+/* ===== 14. YENİ: CONTACT (ortalı) ===== */
+.contact-section {
+  text-align: center;
+  background-color: #0a1a3d;
+  background-image: linear-gradient(135deg, #0a1224, #14408f);
+}
+
+.contact-section h2::after {
+  margin: 14px auto 0 auto;          /* mavi çizgiyi ortalar */
+}
+
+.contact-section .talk {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 32px;
+  margin: 40px 0 10px 0;
+}
+
+.contact-section .contact-list li {
+  margin-bottom: 18px;
+  font-size: 19px;
+}
+
+.contact-icon {
+  font-size: 26px;
+  margin-right: 12px;
+}
+
+.button-round {
+  border-radius: 40px;
+  padding: 16px 34px;
+  margin-top: 14px;
+}
+
+/* ===== 15. PROJE KARTLARI TELEFONDA ALT ALTA ===== */
+@media (max-width: 800px) {
+  .project-box {
+    float: none;
+    width: auto;
+    margin-right: 0;
+  }
+
+  .project-body {
+    min-height: 0;
+  }
+}
